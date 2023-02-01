@@ -1,0 +1,24 @@
+{
+  "name": "FasTube",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Extn for changing the speed of YouTube videos.",
+  "default_locale": "en",
+  "background": {
+    "scripts": ["src/bg/background.js"],
+    "persistent": false
+  },
+  "options_page": "src/options/index.html",
+  "page_action": {
+    "default_icon": "icons/logo.png",
+    "default_title": "Hasten your YouTube videos.",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "permissions": ["https://www.youtube.com/*", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["src/inject/inject.js", "src/inject/change.js"]
+    }
+  ]
+}
