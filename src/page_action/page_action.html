@@ -1,60 +1,100 @@
-<!doctype html>
-<style type="text/css">
-	* {
-		margin: 0;
-		padding: 0;
-		user-select: none;
-		color: #008cff;
-		font-family: monospace;
-	}
+<!DOCTYPE html>
+<html>
 
-	body {
-		padding: 1.4rem;
-		background-color: #0e0e30;
-	}
+<head>
+	<title>Orange-White Form</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
 
-	#wrapper {
-		background: linear-gradient(to right, #008cff, #6942ef, #0000ff);
-		border-radius: 8px;
-		padding: 2px;
-	}
+		body {
+			background-color: #f37021;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: max-content;
+			width: max-content;
+			border-radius: 15px;
+			height: 170px;
+			width: 270px;
+		}
 
-	#input-text {
-		appearance: none;
-		color: white;
-		outline: none;
-		margin-top: 1rem;
-		border-radius: 5px;
-		background-color: #0e0e30;
-		padding: 0.5rem 1rem;
-		border: 1px solid #737594;
-	}
+		form {
+			background-color: rgba(255, 255, 255, 0.9);
+			border-radius: 15px;
+			box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2),
+				-5px -5px 15px rgba(255, 255, 255, 0.5);
+			padding: 30px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			margin: 10px 5px;
+		}
 
-	#main-popup {
-		padding: 1rem;
-		border-radius: 7px;
-		background-color: #0e0e30;
-	}
+		input[type=text] {
+			background-color: rgba(255, 255, 255, 0.4);
+			padding: 10px;
+			margin-bottom: 10px;
+			border: none;
+			appearance: none;
+			outline: none;
+			border-bottom: 1px solid #f37021;
+			width: 100%;
+		}
 
-	#main-popup {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-</style>
+		::placeholder {
+			color: #f37021;
+			font-style: italic;
+		}
+
+		::-moz-placeholder {
+			color: #f37021;
+			font-style: italic;
+		}
+
+		::-webkit-input-placeholder {
+			color: #f37021;
+			font-style: italic;
+		}
+
+		:-ms-input-placeholder {
+			color: #f37021;
+			font-style: italic;
+		}
+
+		button[type=submit] {
+			background-color: #f37021;
+			color: #fff;
+			border: none;
+			appearance: none;
+			outline: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			width: 100%;
+			cursor: pointer;
+			font-size: 16px;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2),
+				-2px -2px 5px rgba(255, 255, 255, 0.5);
+		}
+
+		button[type=submit]:hover {
+			background-color: #d55e1b;
+		}
+	</style>
+</head>
 
 <body>
-	<div id="wrapper">
-		<div id="main-popup">
-			<h1>Enter Your Speed</h1>
-			<h2>(integer or decimal)</h2>
-			<form id="input-form">
-				<input type="text" id="input-text">
-			</form>
-		</div>
-	</div>
+	<form id="input-form">
+		<input placeholder="enter your speed" type="text" id="input-text" name="email" class="form-input" required />
+		<button type="submit" class="form-button">Change Speed</button>
+	</form>
 </body>
 
 <script src="page_action.js" type="text/javascript"></script>
+
+</html>
